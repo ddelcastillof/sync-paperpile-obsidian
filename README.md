@@ -27,6 +27,7 @@ pip install -r requirements_obsidian.txt
 ```
 
 Or install individually:
+
 ```bash
 pip install bibtexparser python-slugify
 ```
@@ -48,7 +49,7 @@ OBSIDIAN_VAULT_PATH = os.path.expanduser('~/Documents/My Obsidian Vault')  # Cha
    - Repository: Your GitHub repository (or local folder)
    - Export path: `references.bib`
    - Set up automatic sync if desired
-  
+
 ### 4. Create Obsidian Folders
 
 1. Create an empty `Papers/` folder in your Obsidian vault
@@ -75,7 +76,7 @@ Place your `references.bib` file in the same directory as the script and run:
 python sync_obsidian.py
 ```
 
-If you are automatically syncing your bibtex file using the Paperpile bot, then make sure you pull the newest version of that file to your local machine before running the script. 
+If you are automatically syncing your bibtex file using the Paperpile bot, then make sure you pull the newest version of that file to your local machine before running the script.
 
 ### What Gets Created
 
@@ -130,22 +131,24 @@ You can customize the script by modifying:
 ### Common Issues
 
 1. **"Obsidian vault path does not exist"**
-   - Update `OBSIDIAN_VAULT_PATH` in the script to your actual vault location
 
+   - Update `OBSIDIAN_VAULT_PATH` in the script to your actual vault location
 2. **"BibTeX file not found"**
+
    - Ensure `references.bib` is in the same directory as the script
    - Check your Paperpile export is working correctly
-
 3. **Import errors**
+
    - Install the required dependencies: `pip install -r requirements_obsidian.txt`
-  
 4. **Need to start over?**
+
    - Open your `Papers/` folder and delete all the paper files (you can do this in Obsidian, in your file explorer, or at the command line)
    - Delete the `obsidian_archive.json` file inside of this directory (same directory where you put your bibtex file)
 
 ### Verification
 
 After running the script, check:
+
 - A `Papers/` folder exists in your Obsidian vault
 - A `Removed Papers/` folder exists inside of that folder
 - Markdown files are created for your papers
@@ -156,13 +159,15 @@ After running the script, check:
 
 This tool is based off a previous version I made for syncing Paperpile with Notion. That code was based on [this repo](https://github.com/seba-1511/sync-paperpile-notion) by [Séb Arnold](https://github.com/seba-1511). At this point, I think there is very little that is similar to that codebase, but I still want to shout out that tool as my inspiration. That tool used Github actions to automatically detect changes to the bibtex file and push those changes to Notion, while this tool requires you to manually run the sync script. Since my Obsidian files are all local, I'm not sure of a good way to automate the process, though I'm sure one exists (probably via an actual Obsidian plug in).
 
-| Feature | Notion Version | Obsidian Version |
-|---------|---------------|------------------|
-| Storage | Notion Database | Markdown Files |
-| Search | Notion Search | Obsidian Search |
-| Linking | Database Relations | Wiki Links |
-| Notes | Notion Pages | Markdown Sections |
-| Customization | Limited | Full Control |
-| Offline Access | Requires Internet | Full Offline |
+| Feature        | Notion Version     | Obsidian Version  |
+| -------------- | ------------------ | ----------------- |
+| Storage        | Notion Database    | Markdown Files    |
+| Search         | Notion Search      | Obsidian Search   |
+| Linking        | Database Relations | Wiki Links        |
+| Notes          | Notion Pages       | Markdown Sections |
+| Customization  | Limited            | Full Control      |
+| Offline Access | Requires Internet  | Full Offline      |
 
 The Obsidian version provides better control over your data and works entirely offline, while the Notion version offers better collaboration features and structured database views.
+
+> **Note**: In my current setup, first run a `git pull` before running the sync_obsidian.py script
