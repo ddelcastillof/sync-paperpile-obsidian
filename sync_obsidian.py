@@ -20,7 +20,7 @@ BIB_PATH = 'references.bib'
 ARCHIVE_PATH = 'obsidian_archive.json'
 
 # Set your Obsidian vault path here - update this to your actual vault path
-OBSIDIAN_VAULT_PATH = os.path.expanduser('~/Documents/Obsidian Vault')  # Change this!
+OBSIDIAN_VAULT_PATH = os.path.expanduser('/Users/darwin/Library/Mobile Documents/iCloud~md~obsidian/Documents/Darwin-Research')  # Change this!
 PAPERS_FOLDER = 'Papers'
 
 
