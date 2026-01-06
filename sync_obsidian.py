@@ -21,7 +21,7 @@ ARCHIVE_PATH = 'obsidian_archive.json'
 
 # Set your Obsidian vault path here - update this to your actual vault path
 OBSIDIAN_VAULT_PATH = os.path.expanduser('/Users/darwin/Library/Mobile Documents/iCloud~md~obsidian/Documents/Darwin-Research')  # Change this!
-PAPERS_FOLDER = 'Papers'
+PAPERS_FOLDER = '01_Papers'
 
 
 def clean_str(s):
@@ -292,7 +292,7 @@ def entries_are_equal(archive_entry, bib_entry):
 
 def cleanup_removed_papers(papers_folder, current_ref_ids, archive):
     """Move papers that are no longer in Paperpile to Removed Papers folder"""
-    removed_folder = papers_folder / "Removed Papers"
+    removed_folder = papers_folder / "Removed_Papers"
     removed_folder.mkdir(exist_ok=True)
     
     moved_count = 0
